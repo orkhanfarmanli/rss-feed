@@ -56,7 +56,7 @@ class HomeController extends Controller
         $most_frequent_words = array_count_values($words);
 
         foreach ($most_frequent_words as $key => $value) {
-            if (in_array($key, $this->common_words)) {
+            if (in_array(strtolower($key), $this->common_words)) {
                 unset($most_frequent_words[$key]);
             }
         }
