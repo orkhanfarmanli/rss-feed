@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-9">
             <div class="card">
-                <div class="card-header">RSS feed</div>
+                <div class="card-header">Feed</div>
 
                 <div class="card-body">
                     @if (session('status'))
