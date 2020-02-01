@@ -8,16 +8,9 @@
                 <div class="card-header">Feed</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
                     @foreach ($feed->children() as $post)
                     @if ($post->title && $post->summary)
                     <div>
-                        <span>{{ $post->author }}</span>
                         <h3><b>{!! $post->title !!}</b></h3>
                         {!! $post->summary !!}
                         <b>
