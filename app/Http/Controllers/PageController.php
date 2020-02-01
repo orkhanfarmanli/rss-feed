@@ -9,7 +9,8 @@ class PageController extends Controller
 {
     /**
      * Index page
-     * @return Response
+     * 
+     * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {

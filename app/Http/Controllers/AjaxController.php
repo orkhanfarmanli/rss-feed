@@ -9,6 +9,7 @@ class AjaxController extends Controller
 {
     /**
      * Check if email exists in the db
+     * 
      * @return Response
      */
     public function checkEmail(Request $request)
