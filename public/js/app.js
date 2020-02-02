@@ -1,4 +1,4 @@
-// Convert given form into ajax form
+// Convert given form into an ajax form
 function handleForm(formId) {
     $(formId).on('submit', function (e) {
         e.preventDefault();
@@ -13,9 +13,7 @@ function handleForm(formId) {
             dataType: 'JSON',
             data: $data,
             success: function (data) {
-                if (data.success) {
-                    document.location.reload(true);
-                }
+                document.location.reload(true);
             },
             error: function (err) {
                 var errors = err.responseJSON.errors;
@@ -50,15 +48,13 @@ $('#register-form input[type=email]').keyup(function () {
                 email: $email.val()
             },
             success: function (data) {
-                if (data.success) {
-                    $email.addClass('is-invalid');
-                    $email.siblings('.invalid-feedback').find('strong').text(data.message);
-                } else {
-                    $email.removeClass('is-invalid');
-                    $email.siblings('.invalid-feedback').find('strong').text();
-                }
+                $email.addClass('is-invalid');
+                $email.siblings('.invalid-feedback').find('strong').text(data.message);
             },
-            error: function (err) {}
+            error: function (err) {
+                $email.removeClass('is-invalid');
+                $email.siblings('.invalid-feedback').find('strong').text();
+            }
         });
     }
 });

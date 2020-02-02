@@ -21,9 +21,9 @@ class AjaxController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if ($user) {
-            return ['success' => true, 'message' => 'The email has already been taken.'];
+            return response()->json(['message' => 'The email has already been taken.'], 200);
         }
 
-        return ['success' => false];
+        return response()->json(['message' => 'The email doesn\'t exist in our database.'], 404);
     }
 }

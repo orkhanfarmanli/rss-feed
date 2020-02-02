@@ -14,5 +14,5 @@
 Auth::routes();
 
 Route::get('/', 'PageController@index')->name('index');
-Route::post('/check-email', 'AjaxController@checkEmail')->name('check.email');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/check-email', 'AjaxController@checkEmail')->name('check.email');
