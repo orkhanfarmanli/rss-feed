@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $feed = RssParser::getRssFeed("https://www.theregister.co.uk/software/headlines.atom");
+        $feed = RssParser::getFeed("https://www.theregister.co.uk/software/headlines.atom");
         $most_frequent_words = TextParser::findMostFrequentWords($feed);
 
         return view('home', ['feed' => $feed, 'most_frequent_words' => $most_frequent_words]);
